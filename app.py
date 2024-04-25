@@ -28,12 +28,12 @@ def track():
         print('requests successful')
         # parse the html 
         soup = BeautifulSoup(r.content, 'html5lib') 
-        # with open('file.txt', 'w', encoding="utf-8") as f:
-        #     f.write(str(r.text))
+        with open('file.txt', 'w', encoding="utf-8") as f:
+            f.write(str(r.text))
 
         # extract price using class '_16Jk6d' 
-        price = soup.find('div', attrs={"class": "_16Jk6d"}).text 
-        title = soup.find('span', attrs={"class": "B_NuCI"}).text.strip()
+        price = soup.find('div', attrs={"class": "Nx9bqj CxhGGd"}).text 
+        title = soup.find('span', attrs={"class": "VU-ZEz"}).text.strip()
         print(title)
         # remove Rs symbol from price 
         price_without_Rs = price[1:] 
